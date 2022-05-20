@@ -52,7 +52,7 @@ function definitionToHtmlDataTag(definition: ComponentDefinition, checker: TypeC
 	// Grab path to the definition file if possible
 	const node = getFirst(definition.tagNameNodes) || getFirst(definition.identifierNodes);
 	const fileName = node?.getSourceFile().fileName;
-	const path = fileName != null && config.cwd != null ? `./${relative(config.cwd, fileName)}` : undefined;
+	const path = fileName != null && config.cwd != null ? `./${relative(config.cwd, fileName)}`.replaceAll("\\", "/") : undefined;
 
 	const declaration = definition.declaration;
 

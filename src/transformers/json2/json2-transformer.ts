@@ -512,7 +512,7 @@ function getPackageName(sourceFile: SourceFile): string | undefined {
  * @param context
  */
 function getRelativePath(fullPath: string, context: TransformerContext) {
-	return context.config.cwd != null ? `./${relative(context.config.cwd, fullPath)}` : basename(fullPath);
+	return (context.config.cwd != null ? `./${relative(context.config.cwd, fullPath)}` : basename(fullPath)).replaceAll("\\", "/");
 }
 
 /**

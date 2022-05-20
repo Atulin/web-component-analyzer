@@ -1,6 +1,6 @@
 {
-	"name": "@angius/web-component-analyzer-webtypes",
-	"version": "2.0.5",
+	"name": "@angius/web-component-analyzer",
+	"version": "2.0.10",
 	"description": "CLI that analyzes web components",
 	"main": "lib/cjs/api.js",
 	"module": "lib/esm/api.js",
@@ -29,7 +29,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/jpradelle/web-component-analyzer.git"
+		"url": "git+https://github.com/atulin/web-component-analyzer.git"
 	},
 	"keywords": [
 		"web components",

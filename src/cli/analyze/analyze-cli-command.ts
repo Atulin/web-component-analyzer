@@ -38,9 +38,8 @@ Please follow and contribute to the discussion at:
 	}
 
 	if (config.format === "webtypes") {
-		const webTypesConfig = config.webtypesConfig ? JSON.parse(config.webtypesConfig) : null;
-		if (!webTypesConfig.name) throw makeCliError('Missing webtypes-config "name" property');
-		if (!webTypesConfig.version) throw makeCliError('Missing webtypes-config "version" property');
+		if (!config?.webtypesConfig?.name) throw makeCliError('Missing webtypes-config "name" property');
+		if (!config?.webtypesConfig?.version) throw makeCliError('Missing webtypes-config "version" property');
 	}
 
 	// If no "out" is specified, output to console
@@ -132,7 +131,7 @@ function transformResults(results: AnalyzerResult[] | AnalyzerResult, program: P
 		pathAsAbsolute: config.pathAsAbsolute
 	};
 	if (format == "webtypes") {
-		transformerConfig.webTypes = config.webtypesConfig ? JSON.parse(config.webtypesConfig) : null;
+		transformerConfig.webTypes = config.webtypesConfig;
 	}
 
 	return transformAnalyzerResult(format, results, program, transformerConfig);

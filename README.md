@@ -31,14 +31,14 @@ In addition to [vanilla web components](https://developer.mozilla.org/en-US/docs
 
 <!-- prettier-ignore -->
 ```bash
-$ npm install -g web-component-analyzer-webtypes
+$ npm install -g @angius/web-component-analyzer
 ```
 
 **or**
 
 <!-- prettier-ignore -->
 ```bash
-$ npx web-component-analyzer-webtypes src
+$ npx @angius/web-component-analyzer src
 ```
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
@@ -113,7 +113,22 @@ VSCode supports a JSON format called [vscode custom data](https://github.com/mic
 
 <!-- prettier-ignore -->
 ```bash
-wca-webtypes analyze src --format webtypes --outFile web-types-custom.json --webtypesConfig='{"name": "web-types-custom", "version": "0.0.1", "description-markup": "markdown"}'
+wca-webtypes analyze src --format webtypes --outFile web-types-custom.json
+```
+
+To configure Webtypes (the name, version, etc.) add this section to your `package.json`. The `name` and `version` fields are required.
+
+You can use the `wca-config` section to configure other options as well.
+
+```json
+"wca-config": {
+	"webtypesConfig": {
+		"name": "web-types-custom",
+		"version": "0.0.1",
+		"framework": "lit",
+		"description-markup": "markdown"
+	}
+}
 ```
 
 Web-types format is a description for IDE completion, see [web-types](https://github.com/JetBrains/web-types/tree/master/packages)
